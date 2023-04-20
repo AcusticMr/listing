@@ -41,18 +41,16 @@
     });
 
     const fetchData = async () => {
+        const options = {
+            method: "POST",
+            headers: APISettings.headers
+        }
         let res
 
         if (state.searchPhrase.length) {
-            res = await fetch(`${APISettings.baseURL}/search?order=${state.sorting}&search=${state.searchPhrase}`, {
-                method: "POST",
-                headers: APISettings.headers
-            });
+            res = await fetch(`${APISettings.baseURL}/search?order=${state.sorting}&search=${state.searchPhrase}`, options);
         } else {
-            res = await fetch(`${APISettings.baseURL}/product-listing/e435c9763b0d44fcab67ea1c0fdb3fa0?order=${state.sorting}`, {
-                method: 'POST',
-                headers: APISettings.headers
-            });
+            res = await fetch(`${APISettings.baseURL}/product-listing/e435c9763b0d44fcab67ea1c0fdb3fa0?order=${state.sorting}`, options);
         }
 
         const json = await res.json();
@@ -120,7 +118,7 @@
             max-width: 1200px;
             padding: 16px 0;
         }
-        
+
         .sorting {
             width: 300px;
         }
