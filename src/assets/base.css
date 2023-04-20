@@ -1,0 +1,20 @@
+:root {
+    --c-text: #000000;
+    --c-header-text: #ffffff;
+    --c-sorting: #999999;
+
+    --bgc-header: #222222;
+    --bgc-cards: #dddddf;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 500px;
+    color: var(--c-text);
+    line-height: 1.6;
+    font-family: Inter, -apple-system, sans-serif;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
